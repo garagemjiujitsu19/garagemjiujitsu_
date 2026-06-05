@@ -1,0 +1,964 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+:root {
+    --bg: #050505;
+    --panel: #111;
+    --line: #282828;
+    --text: #fff;
+    --muted: #aaa;
+    --brand: #f00;
+    --brand-dark: #c00;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: "Nunito", sans-serif;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track,
+body {
+    background: var(--bg);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--brand);
+}
+
+body {
+    color: var(--text);
+}
+
+section {
+    padding: 5rem 9%;
+}
+
+button {
+    color: inherit;
+    cursor: pointer;
+    background: none;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2.8rem;
+    padding-right: 3rem;
+    background: linear-gradient(130deg, var(--brand) 93%, transparent 90%);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover,
+.card:hover {
+    transform: scale(1.04);
+}
+
+.heading {
+    position: relative;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.heading::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 0.1rem;
+    background: var(--muted);
+}
+
+.heading span {
+    padding: 0.5rem 1.5rem;
+    border: 0.1rem solid var(--muted);
+    border-radius: 0.5rem;
+    background: var(--bg);
+    color: var(--brand);
+    font-size: 3rem;
+}
+
+.header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 9%;
+    background: #000;
+}
+
+.logo {
+    color: var(--text);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--brand);
+}
+
+.navbar a {
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    color: var(--text);
+    font-size: 1.7rem;
+}
+
+.navbar a:hover,
+.navbar .btn-red {
+    background: var(--brand);
+}
+
+.navbar .btn-red {
+    border-radius: 0.4rem;
+    font-weight: 700;
+}
+
+.navbar .btn-red:hover {
+    background: var(--brand-dark);
+}
+
+#menu-btn {
+    display: none;
+    color: var(--text);
+    font-size: 3rem;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8rem;
+    padding-top: 10rem;
+}
+
+.about .image,
+.about .content {
+    flex: 1 1 42rem;
+}
+
+.about .image {
+    position: relative;
+}
+
+.about .image::before,
+.about .image::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 15rem;
+    height: 15rem;
+    background: var(--brand);
+}
+
+.about .image::before {
+    top: 0;
+    left: 0;
+}
+
+.about .image::after {
+    right: 0;
+    bottom: 0;
+}
+
+.about .image img {
+    width: 100%;
+    padding: 2rem;
+}
+
+.about .content span,
+.pricing .information span,
+.banner span,
+.trainers .content span {
+    color: var(--brand);
+    font-size: 2rem;
+}
+
+.about .title,
+.pricing .information h2 {
+    margin-top: 0.5rem;
+    color: var(--text);
+    font-size: 4rem;
+}
+
+.about p,
+.pricing p,
+.features p,
+.banner p,
+.footer p,
+.footer .links {
+    color: var(--muted);
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+.about p,
+.pricing p {
+    padding: 1rem 0;
+}
+
+.box-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.about .box-container {
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    margin-top: 1rem;
+}
+
+.about .box h3 {
+    color: var(--text);
+    font-size: 2rem;
+}
+
+.about .box i,
+.pricing i,
+.footer i {
+    padding-right: 1rem;
+    color: var(--brand);
+}
+
+.features .box-container {
+    grid-template-columns: minmax(0, 75rem);
+    justify-content: center;
+}
+
+.features .box,
+.pricing .plan,
+.pricing .information,
+.footer .box {
+    background: var(--panel);
+}
+
+.features .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 5 / 3;
+    overflow: hidden;
+}
+
+.features .image img,
+.trainers .box > img,
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.features .box:hover .image img {
+    transform: scale(1.08);
+}
+
+.features .content {
+    padding: 1.4rem;
+    text-align: center;
+}
+
+.features .content img {
+    height: 9rem;
+    margin-bottom: 1rem;
+}
+
+.features h3 {
+    color: var(--brand);
+    font-size: 2rem;
+}
+
+.pricing {
+    display: block;
+}
+
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 1.5rem;
+}
+
+.pricing .information,
+.pricing .plan {
+    padding: 2rem;
+}
+
+.pricing .plan {
+    text-align: center;
+}
+
+/* Aplica o corte linear/chanfrado idêntico nos dois planos */
+.pricing .plan.basic,
+.pricing .plan.adult {
+    background: linear-gradient(130deg, var(--panel) 93%, transparent 90%);
+}
+
+.pricing .plan h3 {
+    margin: 1rem 0;
+    color: var(--text);
+    font-size: 2.5rem;
+}
+
+.pricing .price {
+    color: var(--brand);
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.pricing .price span {
+    color: var(--text);
+    font-size: 2rem;
+}
+
+.banner {
+    padding: 6rem 9%;
+    text-align: center;
+}
+
+.banner h2 {
+    padding-top: 1rem;
+    color: var(--text);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+.banner p {
+    max-width: 60rem;
+    margin: 1rem auto;
+}
+
+.trainers .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+}
+
+.trainers .box {
+    position: relative;
+    max-width: 38rem;
+    aspect-ratio: 4 / 5;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #000;
+}
+
+.trainers .box > img {
+    object-position: center 68%;
+}
+
+.trainers .content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    background: var(--panel);
+    transform: translateY(6.5rem);
+}
+
+.trainers .box:hover .content {
+    transform: translateY(0);
+}
+
+.trainers h3 {
+    padding-top: 0.5rem;
+    color: var(--text);
+    font-size: 2rem;
+}
+
+.share {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 0.1rem solid #333;
+}
+
+.share a {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background: var(--panel);
+    color: var(--text);
+    font-size: 1.8rem;
+    line-height: 4.5rem;
+    text-align: center;
+}
+
+.share a:hover {
+    background: var(--brand);
+}
+
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 4rem 2rem;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    width: 25rem;
+    height: 35rem;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 1.5rem;
+    background: var(--panel);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
+}
+
+.nome-produto {
+    margin-top: 1rem;
+    color: var(--text);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.92);
+}
+
+.modal.show {
+    display: flex;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+body.modal-open .header {
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 60rem;
+    padding: 4rem;
+    border: 1px solid var(--line);
+    border-radius: 1.5rem;
+    background: #222;
+    color: var(--text);
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+}
+
+.modal-content ul {
+    list-style: none;
+}
+
+.modal-content img {
+    display: none;
+    max-width: 100%;
+    margin: 0 auto 1.5rem;
+    border-radius: 1rem;
+}
+
+.modal-content img.active {
+    display: block;
+}
+
+.modal-content .day {
+    color: var(--brand);
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.modal-content .time {
+    margin-bottom: 1rem;
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: var(--text);
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.close:hover {
+    color: var(--brand-dark);
+}
+
+.modal-historia .modal-content {
+    max-width: 72rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--panel);
+    text-align: left;
+}
+
+.modal-historia h2 {
+    text-align: center;
+}
+
+.modal-historia p {
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+    font-size: 1.85rem;
+    line-height: 1.8;
+}
+
+.modal-historia .lema {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.cores {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.cor {
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 2px solid var(--text);
+    border-radius: 50%;
+}
+
+.cor:hover {
+    transform: scale(1.15);
+}
+
+.preta {
+    background: #000;
+}
+
+.branca {
+    background: #fff;
+}
+
+.tabela {
+    background: #555;
+}
+
+.tamanhos {
+    margin: 1.5rem 0;
+    font-size: 1.6rem;
+}
+
+.tamanhos span {
+    display: inline-block;
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    background: #222;
+}
+
+.tamanhos span:hover {
+    background: var(--brand-dark);
+}
+
+.preco {
+    margin-top: 2.2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.footer {
+    background: var(--bg) !important;
+    padding: 5rem 9%;
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.footer .box {
+    background: transparent !important;
+    border: none !important;
+}
+
+.footer h3 {
+    padding: 1rem;
+    color: var(--text);
+    font-size: 2.2rem;
+}
+
+.footer p,
+.footer .links,
+.footer .share {
+    display: block;
+    padding: 1rem 3rem;
+}
+
+.footer .links {
+    color: var(--muted);
+    transition: color 0.2s linear;
+}
+
+.footer .links:hover {
+    color: var(--brand) !important;
+}
+
+.footer .email {
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 58%;
+        scroll-padding-top: 7.2rem;
+    }
+
+    section {
+        padding: 3.6rem 1.6rem;
+    }
+
+    .header {
+        min-height: 5.8rem;
+        padding: 0.7rem 1rem;
+        gap: 0.6rem;
+        border-bottom: 1px solid #1f1f1f;
+        box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.45);
+    }
+
+    .logo {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        font-size: clamp(1.55rem, 4.6vw, 2rem);
+        line-height: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .navbar {
+        order: 2;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .navbar a:not(.btn-red) {
+        display: none;
+    }
+
+    .navbar .btn-red {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3.1rem;
+        padding: 0.65rem 0.85rem;
+        border-radius: 999px;
+        font-size: 1.12rem;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    #menu-btn {
+        order: 3;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.7rem;
+        height: 3.7rem;
+        border: 1px solid #242424;
+        border-radius: 0.6rem;
+        background: var(--panel);
+        font-size: 2.2rem;
+    }
+
+    .navbar.active {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: block;
+        padding: 0.7rem 1rem 1rem;
+        border-top: 1px solid #222;
+        background: #000;
+        box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.55);
+    }
+
+    .navbar.active a {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0 0;
+        padding: 1.05rem 1.2rem;
+        border: 1px solid #242424;
+        border-radius: 0.4rem;
+        background: #121212;
+        font-size: 1.55rem;
+    }
+
+    .about {
+        gap: 2.4rem;
+        padding-top: 8.4rem;
+    }
+
+    .about .image {
+        flex-basis: 100%;
+    }
+
+    .about .image::before,
+    .about .image::after {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .about .image img {
+        padding: 1rem;
+        border-radius: 0.8rem;
+    }
+
+    .about .title,
+    .pricing .information h2 {
+        font-size: 2.85rem;
+        line-height: 1.15;
+    }
+
+    .about p,
+    .pricing p,
+    .features p,
+    .banner p,
+    .footer p,
+    .footer .links {
+        line-height: 1.65;
+    }
+
+    .about .box-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    
+    .about .box,
+    .features .box,
+    .pricing .plan,
+    .pricing .information {
+        border: 1px solid var(--line);
+        border-radius: 0.8rem;
+        background: var(--panel);
+    }
+
+    .about .box {
+        padding: 1.2rem;
+    }
+
+    .about .box h3 {
+        font-size: 1.45rem;
+        line-height: 1.25;
+    }
+
+    .about .box p {
+        padding-bottom: 0;
+        font-size: 1.25rem;
+    }
+
+    .heading {
+        margin-bottom: 2rem;
+    }
+
+    .heading span {
+        padding: 0.55rem 1.1rem;
+        font-size: 2.25rem;
+    }
+
+    .btn {
+        padding: 0.9rem 2.2rem 0.9rem 2rem;
+        border-radius: 0.3rem;
+        font-size: 1.45rem;
+    }
+
+    .features .box-container,
+    .pricing,
+    .trainers .box-container,
+    .footer .box-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .features .box {
+        overflow: hidden;
+    }
+
+    .features .content {
+        padding: 1.2rem;
+    }
+
+    .features .content img {
+        height: 6rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .pricing .information,
+    .pricing .plan {
+        padding: 1.6rem;
+    }
+
+    .pricing .price {
+        font-size: 3.8rem;
+    }
+
+    .pricing .list p {
+        padding: 0.65rem 0;
+    }
+
+    .banner {
+        padding: 4rem 1.6rem;
+    }
+
+    .banner h2 {
+        font-size: 2.45rem;
+    }
+
+    .trainers .box {
+        max-width: 32rem;
+        border-radius: 0.8rem;
+    }
+
+    .trainers .content {
+        padding: 1.4rem;
+        transform: translateY(0);
+    }
+
+    .share {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 0;
+    }
+
+    .produtos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.4rem;
+        padding: 2.4rem 0 0;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        border-radius: 0.9rem;
+        box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.45);
+    }
+
+    .nome-produto {
+        margin-top: 0.8rem;
+        font-size: 1.55rem;
+    }
+
+    .modal {
+        align-items: flex-start;
+        padding: 1.2rem;
+    }
+
+    .modal-content,
+    .modal-historia .modal-content {
+        max-height: calc(100svh - 2.4rem);
+        padding: 2.4rem 1.6rem;
+        border-radius: 1rem;
+    }
+
+    .modal-content h2,
+    .modal-historia h2 {
+        margin-bottom: 1.4rem;
+        font-size: 2.25rem;
+    }
+
+    .modal-content img.active {
+        max-height: 48svh;
+        object-fit: contain;
+    }
+
+    .close {
+        top: 1rem;
+        right: 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        background: #1a1a1a;
+        font-size: 2.3rem;
+    }
+
+    .footer {
+        padding-top: 2rem;
+    }
+
+    .footer .box {
+        padding: 1rem 0;
+    }
+
+    .footer h3 {
+        font-size: 1.9rem;
+    }
+
+    .footer p,
+    .footer .links,
+    .footer .share {
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+
+    .footer .share a {
+        width: 4rem;
+        height: 4rem;
+        line-height: 4rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .logo {
+        max-width: 13.5rem;
+    }
+
+    .navbar .btn-red {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .about .box-container,
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+}
